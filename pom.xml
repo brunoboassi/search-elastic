@@ -9,9 +9,9 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>br.com.exemplo</groupId>
-	<artifactId>dataingestion</artifactId>
+	<artifactId>search-elastic</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>dataingestion</name>
+	<name>search-elastic</name>
 	<description>Demo project for Spring Boot</description>
 
 	<properties>
@@ -30,10 +30,6 @@
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>org.springframework.kafka</groupId>
-			<artifactId>spring-kafka</artifactId>
 		</dependency>
 
 		<dependency>

@@ -1,7 +1,6 @@
 package br.com.exemplo.dataingestion.adapters.controllers.servers;
 
 
-import br.com.exemplo.dataingestion.adapters.events.entities.DataLancamentoEvent;
 import br.com.exemplo.dataingestion.domain.entities.Lancamento;
 import br.com.exemplo.dataingestion.application.usecases.UseCase;
 import lombok.RequiredArgsConstructor;
