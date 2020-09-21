@@ -6,10 +6,18 @@ import br.com.exemplo.dataingestion.adapters.datastores.repositories.LancamentoE
 import br.com.exemplo.dataingestion.domain.entities.Lancamento;
 import br.com.exemplo.dataingestion.domain.repositories.LancamentoRepository;
 import lombok.RequiredArgsConstructor;
+import org.elasticsearch.index.query.QueryBuilder;
+import org.elasticsearch.index.query.QueryBuilders;
+import org.elasticsearch.index.query.QueryShardContext;
+import org.joda.time.format.DateTimeFormat;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
+import org.springframework.data.elasticsearch.core.ElasticsearchOperations;
+import org.springframework.data.elasticsearch.core.query.Query;
 import org.springframework.stereotype.Component;
 
+import java.time.OffsetDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.List;
 import java.util.UUID;
 
@@ -20,6 +28,7 @@ public class LancamentoRepositoryImpl implements LancamentoRepository {
     private final EntityMapper<Lancamento, LancamentoEntity> lancamentoLancamentoEntityEntityMapper;
     private final EntityMapper<LancamentoEntity,Lancamento> lancamentoEntityLancamentoEntityMapper;
     private final LancamentoEntityRepository lancamentoEntityRepository;
+    private final ElasticsearchOperations elasticsearchOperations;
     @Override
     public Lancamento save(Lancamento lancamento) {
         return lancamentoEntityLancamentoEntityMapper
@@ -50,5 +59,11 @@ public class LancamentoRepositoryImpl implements LancamentoRepository {
         return lancamentoEntityList
                 .map(lancamentoEntity -> lancamentoEntityLancamentoEntityMapper.convert(lancamentoEntity))
                 .toList();
+    }
+
+    @Override
+    public List<Lancamento> getLancamentosByData(UUID idConta, OffsetDateTime dataInicio, OffsetDateTime dataFim) {
+//        elasticsearchOperations.search(QueryBuilders.rangeQuery("dataLancamento").)
+        return null;
     }
 }

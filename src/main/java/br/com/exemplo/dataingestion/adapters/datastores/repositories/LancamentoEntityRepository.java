@@ -11,4 +11,5 @@ import java.util.UUID;
 @Repository
 public interface LancamentoEntityRepository extends ElasticsearchRepository<LancamentoEntity, UUID> {
     Page<LancamentoEntity> findByContaNumeroUnicoConta(UUID idConta, Pageable pageable);
+
 }

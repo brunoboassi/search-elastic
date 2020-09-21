@@ -21,7 +21,7 @@ public class LancamentoEntityToLancamentoMapperImpl implements EntityMapper<Lanc
                 )
                 .dataContabilLancamento(lancamentoEntity.getDataContabilLancamento())
                 .dataLancamento(lancamentoEntity.getDataLancamento())
-                .indicadorLancamentoCompulsorioOcorrencia(lancamentoEntity.getIndicadorLancamentoCompulsorioOcorrencia())
+                .indicadorLancamentoCompulsorioOcorrencia(lancamentoEntity.isIndicadorLancamentoCompulsorioOcorrencia())
                 .metadados(lancamentoEntity.getMetadados())
                 .numeroIdentificacaoLancamentoConta(lancamentoEntity.getNumeroIdentificacaoLancamentoConta())
                 .siglaSistemaOrigem(lancamentoEntity.getSiglaSistemaOrigem())

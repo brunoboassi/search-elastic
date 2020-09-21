@@ -8,6 +8,7 @@ import org.springframework.data.elasticsearch.annotations.Field;
 import org.springframework.data.elasticsearch.annotations.FieldType;
 
 import java.util.List;
+import java.util.Map;
 import java.util.UUID;
 
 @Getter
@@ -26,10 +27,10 @@ public class LancamentoEntity {
     private String siglaSistemaOrigem;
     private String codigoMotivoLancamento;
     private String textoComplementoLancamento;
-    private String indicadorLancamentoCompulsorioOcorrencia;
+    private boolean indicadorLancamentoCompulsorioOcorrencia;
     private String dataContabilLancamento;
     private String dataLancamento;
     @Field(type = FieldType.Nested, includeInParent = true)
     private ContaEntity conta;
-    private List<String> metadados;
+    private Map<String,Object> metadados;
 }
